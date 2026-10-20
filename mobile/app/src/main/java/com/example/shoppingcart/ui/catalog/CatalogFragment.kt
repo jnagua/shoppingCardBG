@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.MenuProvider
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
@@ -25,6 +26,8 @@ class CatalogFragment : Fragment() {
     private var _binding: FragmentCatalogBinding? = null
     private val binding get() = _binding!!
 
+    private val productAdapter = ProductAdapter(onAddClick = { })
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,6 +40,27 @@ class CatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupMenu()
+        binding.recyclerProducts.adapter = productAdapter
+    }
+
+    private fun showLoading() = showOnly(binding.progressLoading)
+
+    private fun showEmpty() = showOnly(binding.textEmpty)
+
+    private fun showError(message: String) {
+        binding.textError.text = message
+        showOnly(binding.layoutError)
+    }
+
+    private fun showProducts(products: List<ProductItemUi>) {
+        productAdapter.submitList(products)
+        showOnly(binding.recyclerProducts)
+    }
+
+    private fun showOnly(visibleView: View) = with(binding) {
+        listOf(recyclerProducts, progressLoading, textEmpty, layoutError).forEach {
+            it.isVisible = it == visibleView
+        }
     }
 
     private fun setupMenu() {
@@ -60,6 +84,7 @@ class CatalogFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.recyclerProducts.adapter = null
         _binding = null
     }
 }

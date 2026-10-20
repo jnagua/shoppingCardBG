@@ -2,4 +2,12 @@
     <string name="app_name">ShoppingCart</string>
     <string name="title_catalog">Catálogo</string>
     <string name="title_cart">Carrito</string>
+
+    <string name="action_add_to_cart">Agregar</string>
+    <string name="action_retry">Reintentar</string>
+    <string name="product_available">Disponibles: %1$d</string>
+    <string name="product_out_of_stock">Sin stock</string>
+    <string name="product_in_cart">En carrito: %1$d</string>
+    <string name="catalog_empty">No hay productos disponibles</string>
+    <string name="catalog_error">No se pudo cargar el catálogo</string>
 </resources>
