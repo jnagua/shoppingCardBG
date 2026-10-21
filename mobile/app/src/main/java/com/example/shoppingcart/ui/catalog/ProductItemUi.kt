@@ -10,7 +10,6 @@ data class ProductItemUi(
     val price: String,
     val stock: Int,
     val quantityInCart: Int,
-    val isAdding: Boolean
-) {
-    val canAdd: Boolean get() = !isAdding && quantityInCart < stock
-}
+    val isAdding: Boolean,
+    val canAdd: Boolean
+)

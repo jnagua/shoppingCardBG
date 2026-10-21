@@ -10,4 +10,20 @@
     <string name="product_in_cart">En carrito: %1$d</string>
     <string name="catalog_empty">No hay productos disponibles</string>
     <string name="catalog_error">No se pudo cargar el catálogo</string>
+
+    <string name="cart_unit_price">%1$s c/u</string>
+    <string name="cart_total_units">Unidades: %1$d</string>
+    <string name="cart_total_label">Total</string>
+    <string name="cart_empty">Tu carrito está vacío</string>
+    <string name="cart_error">No se pudo cargar el carrito</string>
+    <string name="action_go_to_catalog">Ver catálogo</string>
+    <string name="action_increase">Aumentar cantidad</string>
+    <string name="action_decrease">Disminuir cantidad</string>
+    <string name="action_remove">Eliminar producto</string>
+
+    <string name="error_stock_exceeded">Solo hay %1$d unidades disponibles de este producto</string>
+    <string name="error_product_not_found">El producto ya no está disponible</string>
+    <string name="error_invalid_quantity">Cantidad no válida</string>
+    <string name="error_item_not_in_cart">El producto ya no está en el carrito</string>
+    <string name="error_unexpected">Ocurrió un error, inténtalo de nuevo</string>
 </resources>
